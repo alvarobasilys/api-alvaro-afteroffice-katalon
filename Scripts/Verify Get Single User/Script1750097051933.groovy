@@ -17,23 +17,36 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-def response = WS.sendRequestAndVerify(findTestObject('Get Users', [('baseUrl') : GlobalVariable.baseUrl, ('apiKey') : apiKey
-            , ('page') : page]))
+def response
+if(userId == '') {
+	'Use endpoint Get Users when userId not filled'
+	response = WS.sendRequestAndVerify(findTestObject('Get Users', [('baseUrl') : GlobalVariable.baseUrl, ('apiKey') : apiKey]))
+}else {
+	response = WS.sendRequestAndVerify(findTestObject('Get Single User', [('baseUrl') : GlobalVariable.baseUrl, ('apiKey') : apiKey
+		, ('userId') : userId]))
+}
+
 
 WS.verifyResponseStatusCode(response, expectedStatusCode.toInteger())
 
 switch (WS.getResponseStatusCode(response)) {
     case 401:
         WS.verifyElementPropertyValue(response, 'error', expectedErrorMsg)
-
-        break
+		break
+    case 404:
+    	WS.verifyEqual(response.getResponseText(),'{}')
+		break
     case 200:
-        WS.verifyElementPropertyValue(response, 'page', expectedPage)
-
-        break
+		if(userId==''){
+			'Default page: 1'
+			WS.verifyElementPropertyValue(response, 'page', 1)
+		}else {
+			WS.verifyElementPropertyValue(response, 'data.id', userId)
+		}
+        
+		break
     default:
         break
 }
-
 
 

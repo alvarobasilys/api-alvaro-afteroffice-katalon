@@ -17,22 +17,23 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-def response = WS.sendRequestAndVerify(findTestObject('Get Users', [('baseUrl') : GlobalVariable.baseUrl, ('apiKey') : apiKey
-            , ('page') : page]))
+'collecting data from get users'
+for (int i = 0; i < totalPage; ++i) {
+    def responseGetUsers = WS.sendRequestAndVerify(findTestObject('Get Users', [('baseUrl') : GlobalVariable.baseUrl, ('apiKey') : apiKey
+                , ('page') : i]))
 
-WS.verifyResponseStatusCode(response, expectedStatusCode.toInteger())
+    for (int j = 0; j < WS.getElementPropertyValue(responseGetUsers, 'data').size(); ++j) {
+        int userId = WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].id')
 
-switch (WS.getResponseStatusCode(response)) {
-    case 401:
-        WS.verifyElementPropertyValue(response, 'error', expectedErrorMsg)
+        def responseGetUser = WS.sendRequestAndVerify(findTestObject('Get Single User', [('baseUrl') : GlobalVariable.baseUrl
+                    , ('userId') : userId]))
 
-        break
-    case 200:
-        WS.verifyElementPropertyValue(response, 'page', expectedPage)
-
-        break
-    default:
-        break
+		WS.verifyElementPropertyValue(responseGetUser, 'data.id', userId)
+		WS.verifyElementPropertyValue(responseGetUser, 'data.email', WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].email'))
+		WS.verifyElementPropertyValue(responseGetUser, 'data.first_name',WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].first_name'))
+		WS.verifyElementPropertyValue(responseGetUser, 'data.last_name', WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].last_name'))
+		WS.verifyElementPropertyValue(responseGetUser, 'data.avatar', WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].avatar'))
+    }
 }
 
 

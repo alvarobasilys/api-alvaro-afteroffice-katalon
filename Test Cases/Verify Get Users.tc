@@ -39,6 +39,12 @@
       <value>expectedStatusCode</value>
       <variableId>58a98a4d-83d0-42a8-bc55-afb63f235872</variableId>
    </variableLinks>
+   <variableLinks>
+      <testDataLinkId>8adb767e-4d98-4854-84a3-7a6a67537b33</testDataLinkId>
+      <type>DATA_COLUMN</type>
+      <value>expectedErrorMsg</value>
+      <variableId>314317f5-1ffb-45b1-b4af-1a109e615719</variableId>
+   </variableLinks>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
@@ -66,5 +72,12 @@
       <id>58a98a4d-83d0-42a8-bc55-afb63f235872</id>
       <masked>false</masked>
       <name>expectedStatusCode</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>314317f5-1ffb-45b1-b4af-1a109e615719</id>
+      <masked>false</masked>
+      <name>expectedErrorMsg</name>
    </variable>
 </TestCaseEntity>

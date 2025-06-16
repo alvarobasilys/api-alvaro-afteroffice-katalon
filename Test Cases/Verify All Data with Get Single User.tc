@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verify All Data with Get Single User</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9266c00b-7ff5-4123-b05b-83f7af5fadbf</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>6b843753-3285-4c70-b7d1-0b3107dd2efd</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>388a12a8-3d3d-48aa-a369-ca70a13c673a</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'reqres-free-v1'</defaultValue>
+      <description></description>
+      <id>6b843753-3285-4c70-b7d1-0b3107dd2efd</id>
+      <masked>false</masked>
+      <name>apiKey</name>
+   </variable>
+   <variable>
+      <defaultValue>2</defaultValue>
+      <description></description>
+      <id>388a12a8-3d3d-48aa-a369-ca70a13c673a</id>
+      <masked>false</masked>
+      <name>totalPage</name>
+   </variable>
+</TestCaseEntity>
