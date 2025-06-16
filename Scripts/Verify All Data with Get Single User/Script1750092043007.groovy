@@ -26,15 +26,21 @@ for (int i = 0; i < totalPage; ++i) {
         int userId = WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].id')
 
         def responseGetUser = WS.sendRequestAndVerify(findTestObject('Get Single User', [('baseUrl') : GlobalVariable.baseUrl
-                    , ('userId') : userId]))
+                    , ('userId') : userId, ('apiKey') : apiKey]))
 
-		WS.verifyElementPropertyValue(responseGetUser, 'data.id', userId)
-		WS.verifyElementPropertyValue(responseGetUser, 'data.email', WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].email'))
-		WS.verifyElementPropertyValue(responseGetUser, 'data.first_name',WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].first_name'))
-		WS.verifyElementPropertyValue(responseGetUser, 'data.last_name', WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].last_name'))
-		WS.verifyElementPropertyValue(responseGetUser, 'data.avatar', WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].avatar'))
+        WS.verifyElementPropertyValue(responseGetUser, 'data.id', userId)
+
+        WS.verifyElementPropertyValue(responseGetUser, 'data.email', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
+                j) + '].email'))
+
+        WS.verifyElementPropertyValue(responseGetUser, 'data.first_name', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
+                j) + '].first_name'))
+
+        WS.verifyElementPropertyValue(responseGetUser, 'data.last_name', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
+                j) + '].last_name'))
+
+        WS.verifyElementPropertyValue(responseGetUser, 'data.avatar', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
+                j) + '].avatar'))
     }
 }
-
-
 
