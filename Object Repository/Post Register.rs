@@ -30,7 +30,7 @@
       <matchCondition>equals</matchCondition>
       <name>x-api-key</name>
       <type>Main</type>
-      <value>reqres-free-v1</value>
+      <value>${apiKey}</value>
       <webElementGuid>bc1e9e91-89ad-4e34-b2cd-4e42e07895eb</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>10.2.1</katalonVersion>
@@ -62,6 +62,13 @@
       <id>3d5170bd-33ee-4545-9d40-23fceee314ca</id>
       <masked>false</masked>
       <name>baseUrl</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e7c1c609-91a0-456a-9680-c97f262b6709</id>
+      <masked>false</masked>
+      <name>apiKey</name>
    </variables>
    <variables>
       <defaultValue>''</defaultValue>
