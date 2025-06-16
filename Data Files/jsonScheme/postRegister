@@ -28,18 +28,6 @@
                 }
             },
             "required": [
-                "error",
-                "how_to_get_one"
-            ]
-        },
-        {
-            "type": "object",
-            "properties": {
-                "error": {
-                    "type": "string"
-                }
-            },
-            "required": [
                 "error"
             ]
         }
