@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "oneOf": [
+        {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "token"
+            ]
+        },
+        {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string"
+                },
+                "how_to_get_one": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "error",
+                "how_to_get_one"
+            ]
+        },
+        {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "error"
+            ]
+        }
+    ]
+}
