@@ -12,7 +12,7 @@
    <followRedirects>true</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;email\&quot;: \&quot;eve.holt@reqres.in\&quot;,\n    \&quot;password\&quot;: \&quot;pistol\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;email\&quot;: \&quot;${email}\&quot;,\n    \&quot;password\&quot;: \&quot;${password}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -62,6 +62,20 @@
       <id>3d5170bd-33ee-4545-9d40-23fceee314ca</id>
       <masked>false</masked>
       <name>baseUrl</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>3c90712e-e3f4-44fb-ae3d-42c5f98f9ac5</id>
+      <masked>false</masked>
+      <name>email</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f9c2774c-1b71-4885-86eb-9c140ea654d2</id>
+      <masked>false</masked>
+      <name>password</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

@@ -52,7 +52,7 @@
       <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'12'</defaultValue>
+      <defaultValue>''</defaultValue>
       <description></description>
       <id>46491baf-39ff-4a26-8f25-250d730986bf</id>
       <masked>false</masked>
