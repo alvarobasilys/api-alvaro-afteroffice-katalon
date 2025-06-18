@@ -8,7 +8,7 @@ This project was developed using __Katalon Studio Enterprise Version - 10.2.1__ 
 Assume we're going to execute `Testing Main Function (Inquiry, Register, Delete Data)`. By default, user can execute without any prior preparation. All needed data already saved in `Test Data` folder. Please check the documentation if need some adjusment.
 
 ### Result Report Example
-Please check the result report example. [Result Report Example](https://htmlpreview.github.io/?https://github.com/alvarobasilys/web-alvaro-afteroffice-katalon/blob/main/Example%20Report%20Result/20250617_030853.html)
+Please check the result report example. [Result Report Example](https://htmlpreview.github.io/?https://github.com/alvarobasilys/api-alvaro-afteroffice-katalon/blob/main/Export%20Report%20Result/20250617_030853.html)
 
 Some test cases mark as failure due some api can be sent without input api key
 
