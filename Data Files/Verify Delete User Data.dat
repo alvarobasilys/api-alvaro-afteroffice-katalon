@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>Verify Delete User</name>
+   <name>Verify Delete User Data</name>
    <tag></tag>
    <connectionProperties/>
    <containsHeaders>true</containsHeaders>

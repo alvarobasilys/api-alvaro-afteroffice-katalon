@@ -19,7 +19,7 @@
       <variableId>388a12a8-3d3d-48aa-a369-ca70a13c673a</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'reqres-free-v1'</defaultValue>
+      <defaultValue>GlobalVariable.apiKey</defaultValue>
       <description></description>
       <id>6b843753-3285-4c70-b7d1-0b3107dd2efd</id>
       <masked>false</masked>

@@ -13,7 +13,7 @@
          <iterationType>ALL</iterationType>
          <value></value>
       </iterationEntity>
-      <testDataId>Data Files/Verify Delete User</testDataId>
+      <testDataId>Data Files/Verify Delete User Data</testDataId>
    </testDataLinks>
    <variableLinks>
       <testDataLinkId>aa2956f8-711a-4ce4-a031-2ab9d673b406</testDataLinkId>

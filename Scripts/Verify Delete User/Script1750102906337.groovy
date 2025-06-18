@@ -21,6 +21,6 @@ def response = WS.sendRequest(findTestObject('Delete User', [('baseUrl') : Globa
 
 WS.verifyResponseStatusCode(response, expectedStatusCode.toInteger())
 
-if(WS.getResponseStatusCode(response) ==401) {
+if(WS.getResponseStatusCode(response) == 401) {
 	WS.verifyElementPropertyValue(response, 'error', expectedErrorMsg)
 }

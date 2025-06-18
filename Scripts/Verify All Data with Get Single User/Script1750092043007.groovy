@@ -20,27 +20,27 @@ import org.openqa.selenium.Keys as Keys
 'collecting data from get users'
 for (int i = 0; i < totalPage; ++i) {
     def responseGetUsers = WS.sendRequestAndVerify(findTestObject('Get Users', [('baseUrl') : GlobalVariable.baseUrl, ('apiKey') : apiKey
-                , ('page') : i]))
+                , ('page') : i]), FailureHandling.STOP_ON_FAILURE)
 
     for (int j = 0; j < WS.getElementPropertyValue(responseGetUsers, 'data').size(); ++j) {
         int userId = WS.getElementPropertyValue(responseGetUsers, ('data[' + j) + '].id')
 
         def responseGetUser = WS.sendRequestAndVerify(findTestObject('Get Single User', [('baseUrl') : GlobalVariable.baseUrl
-                    , ('userId') : userId, ('apiKey') : apiKey]))
+                    , ('userId') : userId, ('apiKey') : apiKey]), FailureHandling.STOP_ON_FAILURE)
 
-        WS.verifyElementPropertyValue(responseGetUser, 'data.id', userId)
+        WS.verifyElementPropertyValue(responseGetUser, 'data.id', userId, FailureHandling.CONTINUE_ON_FAILURE)
 
         WS.verifyElementPropertyValue(responseGetUser, 'data.email', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
-                j) + '].email'))
+                j) + '].email'), FailureHandling.CONTINUE_ON_FAILURE)
 
         WS.verifyElementPropertyValue(responseGetUser, 'data.first_name', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
-                j) + '].first_name'))
+                j) + '].first_name'), FailureHandling.CONTINUE_ON_FAILURE)
 
         WS.verifyElementPropertyValue(responseGetUser, 'data.last_name', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
-                j) + '].last_name'))
+                j) + '].last_name'), FailureHandling.CONTINUE_ON_FAILURE)
 
         WS.verifyElementPropertyValue(responseGetUser, 'data.avatar', WS.getElementPropertyValue(responseGetUsers, ('data[' + 
-                j) + '].avatar'))
+                j) + '].avatar'), FailureHandling.CONTINUE_ON_FAILURE)
     }
 }
 
